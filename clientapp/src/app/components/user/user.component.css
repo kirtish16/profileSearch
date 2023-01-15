@@ -1,0 +1,69 @@
+
+.userImg{
+    text-align: right;
+}
+
+.userImg img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+/*Responsive for mobile*/
+@media (max-width: 768px) {
+
+    .userImg{
+        text-align: center;
+    }
+
+}
+  
+
+.repo-list {
+    list-style: none;
+    padding: 0.5rem;
+}
+.repo-list li {
+    border-radius: 4px;
+}
+    
+.repoDataCard{
+    height: 200px;
+    padding: 20px;
+    border: solid #4392F1 3px;
+}
+
+.repoDataCard h3{
+    text-transform: capitalize;
+}
+
+.userDetails{
+    display: flex;
+    color: white;
+}
+
+.userName{
+    color: white;
+}
+
+.userDetails mat-icon{
+    margin-right: 5px;
+}
+
+
+.languageTile {
+    border-width: 0 0 0 0 !important;
+}
+
+.languageTile span {
+      padding: 4px 4px;
+      padding-bottom: 4px;
+      font-size: 15px;
+      border-radius: 6px;
+      background-color: rgba(0, 172, 193, 1);
+      color: white;
+}
+
+.pages{
+    text-align: center;
+}

@@ -1,0 +1,5 @@
+<div *ngIf="utils.showLoading">
+  <app-loader></app-loader>
+</div>
+<app-error *ngIf="utils.errorMessage"></app-error>
+<router-outlet></router-outlet>

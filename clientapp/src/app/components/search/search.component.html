@@ -1,0 +1,13 @@
+<div class="container searchArea">
+
+    <h1>Search Any Github User</h1>
+    <div class="row align-items-center justify-content-center col-md-6">
+        <input id="name" class="form-control mr-2 col-md-5" type="text" placeholder="Enter Username"
+            [formControl]="name" />
+        <button class="btn btn-primary" (click)="checkUser()" [disabled]="!name.value">
+            Search
+        </button>
+        <h5><i> Enter Github username. Click search.</i></h5>
+        <h6> Created by <span style="color:cornflowerblue;text-transform: uppercase;">Kirtish Surangalikar</span></h6>
+    </div>
+</div>

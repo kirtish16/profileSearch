@@ -1,0 +1,16 @@
+.searchArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+
+    input[type='text']{
+        margin-bottom: 7px;
+    }
+
+}
+  

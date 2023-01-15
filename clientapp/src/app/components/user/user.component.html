@@ -1,0 +1,96 @@
+
+<div *ngIf="username">
+  
+    <div class="pb-3">
+      <div class="container-fluid pt-3" style="background-color: #1B1B3A;">
+        <div class="row align-items-center">
+          <div class="userImg col-md-4 col-sm" auto-focus="none">
+            <img
+              src="{{
+                userData.img_url ? userData.img_url : 'favicon.ico'
+              }}"
+              alt="..."
+            />
+          </div>
+  
+          <div class="col-md-8 col-sm">
+            <h1 class="userName">
+              <strong> {{ userData.name }}</strong>
+            </h1>
+            <br />
+            <p class="userDetails">{{ userData.bio }}</p>
+            <p class="userDetails">
+              <mat-icon class="material-icons-outlined"> business </mat-icon>
+              {{ userData.company }}
+            </p>
+            <p class="userDetails">
+              <mat-icon class="material-icons-outlined">
+                  location_on</mat-icon>
+              {{ userData.location }}
+            </p>
+            <p class="userDetails">
+              <mat-icon class="material-icons-outlined"> link </mat-icon>
+              <a
+                href="{{ userData.url ? userData.url : '' }}"
+                class="hyperLink"
+                >{{ userData.url ? userData.url : "Url" }}</a
+              >
+            </p>
+          </div>
+        </div>
+
+      </div>
+  
+      <div class="container">
+        <ul class="repo-list row">
+          <li
+            class="col-md-4 col-sm-6"
+            style="padding: 10px;"
+            *ngFor="
+              let data of userData.repos
+              | paginate
+                : {
+                    itemsPerPage: utils.itemsPerPage,
+                    currentPage: pageSelected,
+                    totalItems: userData.public_repos
+                  }
+              "
+              >
+            <mat-card class="repoDataCard">
+              <div>
+
+                <h3> <a href="{{ data.url ? data.url : '' }}" class="hyperLink">{{ data.name }}</a></h3>
+
+                <p>
+                  {{
+                    data.desc
+                      ? (data.desc | slice: 0:75)
+                      : "No description"
+                  }}
+                  {{
+                    data.desc && data.desc.length > 75 ? "..." : ""
+                  }}
+                </p>
+                
+                <div class="languageTile">
+                  <span>{{ data.language ? data.language : "None" }}</span>
+                </div>
+              </div>
+
+            </mat-card>
+          </li>
+        </ul>
+      </div>
+    
+      <div *ngIf="userRepo && userData.repos.length">
+
+
+        <div class="pages">   
+          <pagination-controls
+          (pageChange)="pageChangeHandler($event)"
+          ></pagination-controls>
+        </div>
+    
+      </div>
+
+</div>
