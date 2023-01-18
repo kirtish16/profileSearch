@@ -18,6 +18,7 @@ export class UserComponent implements OnInit {
     img_url: '',
     company: '',
     url: '',
+    twitter:'',
     location: '',
     public_repos: '',
     repos : [{
@@ -63,6 +64,7 @@ export class UserComponent implements OnInit {
       this.userData.location = data.location ? data.location : 'UnKnown';
       this.userData.url = data.url ? data.url : '';
       this.userData.img_url = data.img_url ? data.img_url : '';
+      this.userData.twitter = data.twitter ? data.twitter  : 'No profile';
       this.userData.public_repos = data.public_repos ? data.public_repos : '';
     })
 

@@ -12,13 +12,13 @@ import { UserComponent } from './components/user/user.component'
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 
 import { BrowserAnimationsModule } from  
     '@angular/platform-browser/animations';
 import { ErrorComponent } from './components/error/error.component'; 
+import { InvalidUserComponent } from './components/invalid-user/invalid-user.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { ErrorComponent } from './components/error/error.component';
     SearchComponent,
     LoaderComponent,
     UserComponent,
-    ErrorComponent
+    ErrorComponent,
+    InvalidUserComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,6 @@ import { ErrorComponent } from './components/error/error.component';
     HttpClientModule,
     MatCardModule,
     MatIconModule,
-    MatSnackBarModule,
     BrowserAnimationsModule,
     NgxPaginationModule
   ],

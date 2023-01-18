@@ -14,7 +14,7 @@ export class SearchComponent {
 
   name = new FormControl('')
 
-  constructor(public utils: UtilsInfo,public api: ApiService,private router: Router,private snackbar : MatSnackBar) { }
+  constructor(public utils: UtilsInfo,public api: ApiService,private router: Router) { }
 
   result :any
   // function to get user profile data 
@@ -31,9 +31,10 @@ export class SearchComponent {
     (error) => {
 
       if(error.error.success == false)
-        this.snackbar.open('Invalid User! Please try valid user name', 'X',{duration: 2000});
+        this.router.navigate(['invalid']) ;
       else 
         this.utils.showPopup(error.error.message)
+
         
         this.utils.stopLoader();
     }) 

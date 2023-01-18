@@ -1,0 +1,10 @@
+
+.messageBody{
+    background-color: #F1F7ED;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+}
+

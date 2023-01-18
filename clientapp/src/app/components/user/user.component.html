@@ -29,11 +29,21 @@
               {{ userData.location }}
             </p>
             <p class="userDetails">
+              <mat-icon class="material-icons-outlined">
+                account_circle</mat-icon>
+                <a
+                href="{{ 'https://twitter.com/' + userData.twitter  }}"
+                class="hyperLink"
+                target="_blank"
+                >{{ userData.twitter }}</a
+              >
+            </p>
+            <p class="userDetails">
               <mat-icon class="material-icons-outlined"> link </mat-icon>
               <a
                 href="{{ userData.url ? userData.url : '' }}"
                 class="hyperLink"
-                >{{ userData.url ? userData.url : "Url" }}</a
+                target="_blank">{{ userData.url ? userData.url : "Url" }}</a
               >
             </p>
           </div>
@@ -59,7 +69,7 @@
             <mat-card class="repoDataCard">
               <div>
 
-                <h3> <a href="{{ data.url ? data.url : '' }}" class="hyperLink">{{ data.name }}</a></h3>
+                <h3> <a href="{{ data.url ? data.url : '' }}" class="hyperLink" target="_blank">{{ data.name }}</a></h3>
 
                 <p>
                   {{

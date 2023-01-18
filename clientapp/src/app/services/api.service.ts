@@ -46,8 +46,12 @@ export class ApiService {
   // Error handling 
   handleError(error: any) {
     
+    if(error.status == 404){
+      this.router.navigate(['invalid']) ;
+    }else
       this.utils.errorMessage = 'Error : ' + ( error.error.message ? error.error.message  : 'Try Again' );
-    this.utils.stopLoader();
+    
+      this.utils.stopLoader();
 
     return throwError(() => new Error(this.utils.errorMessage)) ;
   }
